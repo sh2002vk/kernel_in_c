@@ -1,11 +1,12 @@
 #include "pcb.h"
 #include <stdio.h>
 
-void pcb_init(pcb* this, int uid, states state, int priority, int cores_required){
+void pcb_init(pcb* this, int uid, states state, int priority, int cores_required, int time){
     this->uid = uid;
     this->state = state;
     this->priority = priority;
     this->cores_required = cores_required;
+    this->time = time;
 }
 
 void pcb_status(pcb* this){
