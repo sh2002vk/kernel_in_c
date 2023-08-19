@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <limits.h>
 #include <sys/stat.h>
-#include <sys/types.h>
 
 void get_current_path(char* path, size_t path_size){
     getcwd(path, path_size);

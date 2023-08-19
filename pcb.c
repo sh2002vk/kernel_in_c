@@ -14,3 +14,7 @@ void pcb_status(pcb* this){
     printf("Process priority:    %s\n", this->priority);
     printf("Process requirement: %s\n", this->cores_required);
 }
+
+void update_state(pcb* this, states state){
+    this->state = state;
+}

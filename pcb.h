@@ -18,5 +18,6 @@ typedef struct{
 
 void pcb_init(pcb* this, int uid, states state, int priority, int cores_required);
 void pcb_status(pcb* this);
+void update_state(pcb* this, states state);
 
 #endif
