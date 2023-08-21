@@ -1,18 +1,22 @@
-#ifndef scheduler_H
-#define scheduler_H
+#ifndef SCHEDULER_H
+#define SCHEDULER_H
 #include "pcb.h"
 
 typedef struct {
     int cores;
     int idle_cores;
-    pcb  **core_holder;
-    char **currently_running_processes;
-    char **jobs_in_queue;
+    int queue_length;
+    pcb **core_holder;
+    pcb **jobs_in_queue;
 } scheduler;
 
-scheduler* create_scheduler(scheduler* this, int cores, int max_processes, int max_jobs);
+scheduler* create_scheduler(int cores, int max_jobs);
 int add_job(scheduler* this, pcb* thread);
 int add_to_queue(scheduler* this, pcb* thread);
+int kill_job(scheduler* this, int uid);
+void destroy_scheduler(scheduler* this);
+void update_scheduler(scheduler* this);
+void print_scheduler_status(scheduler* this);
 
 /**
  * ADD JOBS FORMULA:

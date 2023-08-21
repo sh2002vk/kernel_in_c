@@ -1,19 +1,23 @@
 #include "pcb.h"
+#include <stdlib.h>
 #include <stdio.h>
 
-void pcb_init(pcb* this, int uid, states state, int priority, int cores_required, int time){
+pcb* pcb_init(int uid, int priority, int cores_required, int time){
+    pcb* this = malloc(sizeof(pcb));
     this->uid = uid;
-    this->state = state;
+    states new = NEW;
+    this->state = new;
     this->priority = priority;
     this->cores_required = cores_required;
     this->time = time;
+    return this;
 }
 
 void pcb_status(pcb* this){
-    printf("Process UID:         %s\n", this->uid);
-    printf("Process status:      %s\n", this->state);
-    printf("Process priority:    %s\n", this->priority);
-    printf("Process requirement: %s\n", this->cores_required);
+    printf("Process UID:         %d\n", this->uid);
+    printf("Process status:      %d\n", this->state);
+    printf("Process priority:    %d\n", this->priority);
+    printf("Process requirement: %d\n", this->cores_required);
 }
 
 void update_state(pcb* this, states state){

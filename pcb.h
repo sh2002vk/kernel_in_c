@@ -1,12 +1,11 @@
-#ifndef pcb_H
-#define pcb_H
+#ifndef PCB_H
+#define PCB_H
 
 typedef enum {
-    IDLE,
-    RUNNING,
-    KILLED,
-    READY,
-    NEW
+    IDLE,       // waiting in queue
+    RUNNING,    // already running
+    KILLED,     // thread that was killed
+    NEW         // new thread not added to a queue
 } states;
 
 typedef struct{
@@ -17,7 +16,7 @@ typedef struct{
     int time;
 } pcb;
 
-void pcb_init(pcb* this, int uid, states state, int priority, int cores_required, int time);
+pcb* pcb_init(int uid, int priority, int cores_required, int time);
 void pcb_status(pcb* this);
 void update_state(pcb* this, states state);
 
