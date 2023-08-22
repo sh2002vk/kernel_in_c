@@ -29,7 +29,7 @@ int add_job(scheduler* this, pcb* thread) {
             this->core_holder[start] = thread;
             states new_state = RUNNING;
             update_state(thread, new_state);
-            this->idle_cores -= thread->cores_required;
+            this->idle_cores -= 1;
         }
         return 1;
     } else {

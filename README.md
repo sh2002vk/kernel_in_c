@@ -3,6 +3,8 @@
 A simple, unix-based shell with the following command schema: \
 [STILL FIXING BUGS, NOT COMPLETE]
 
+TO RUN: ```gcc shell.c file_handler.c parser.c pcb.c scheduler.c -o shell.exe```
+
 | TYPE   | OPERATION | ARGS                      | NOTES                             | IMPLEMENTED | 
 |--------|-----------|---------------------------|-----------------------------------|-------------|
 | file   | list      | NONE                      | List all files                    | YES         | 
