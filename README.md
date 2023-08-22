@@ -1,10 +1,11 @@
 # Shell from scratch
 [*Project*](https://github.com/sh2002vk/kernel_in_c/blob/main/shell.c) \
-A simple, unix-based shell with the following command schema:
+A simple, unix-based shell with the following command schema: \
+[STILL FIXING BUGS, NOT COMPLETE]
 
 | TYPE   | OPERATION | ARGS                      | NOTES                             | IMPLEMENTED | 
 |--------|-----------|---------------------------|-----------------------------------|-------------|
-| file   | list      | NONE                      | List all files                    | YES         |
+| file   | list      | NONE                      | List all files                    | YES         | 
 | file   | print     | NONE                      | Print the current path            | YES         |
 | file   | enter     | directory                 | Go into a directory               | YES         |
 | file   | makedir   | name                      | Make a new directory              | YES         |
