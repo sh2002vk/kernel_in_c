@@ -13,7 +13,7 @@ TO RUN: ```gcc shell.c file_handler.c parser.c pcb.c scheduler.c -o shell.exe```
 | file   | makedir      | name                      | Make a new directory              | YES         |
 | file   | makefile     | name                      | Make a new file in curr directory | YES         |
 | system | status       | NONE                      | Get current running processes     | YES         |
-| system | queue_status | uid                       | Get current queue processes       | YES         |
+| system | queue_status | NONE                      | Get current queue processes       | YES         |
 | system | start        | uid, priority, core, time | Returns a hash to id the process  | YES         |
 | system | kill         | uid                       | Ends the given process            | YES         |
 
