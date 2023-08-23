@@ -17,6 +17,7 @@ int kill_job(scheduler* this, int uid);
 void destroy_scheduler(scheduler* this);
 void update_scheduler(scheduler* this);
 void print_scheduler_status(scheduler* this);
+void print_queue_status(scheduler* this);
 
 /**
  * ADD JOBS FORMULA:

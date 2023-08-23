@@ -73,6 +73,8 @@ void handle_system_commands(char* commands, scheduler* thread_runner) {
         } else {
             printf("Thread %d was not killed", atoi(words[1]));
         }
+    } else if (!strcmp(words[0], "queue_status")) {
+        print_queue_status(thread_runner);
     } else {
         printf("command not recognized");
     }
@@ -97,7 +99,7 @@ void shell_loop(scheduler* thread_runner){
         // update the state of all processes
         update_scheduler(thread_runner);
 
-        printf("\n\nPOSSIBLE COMMANDS:\nfile {list, print, enter, makefile, makedir},\nsystem {status, start, kill}\nEnter \"END\" to exit program\n");
+        printf("\n\nPOSSIBLE COMMANDS:\nfile {list, print, enter, makefile, makedir},\nsystem {status, start, kill}\nEnter \"END\" to exit program\n\n");
         getline(&input, &len, stdin);      // use this instead of scanf to read whole line at once
         input[strcspn(input, "\n")] = 0;   // get rid of newline
 
